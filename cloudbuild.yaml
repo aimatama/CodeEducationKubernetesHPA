@@ -10,18 +10,18 @@ steps:
     args: ['test', '-v','./...']
     env: ['GOPATH=.']
 
-  - id: "Build da Imagem"
+  - id: "Efetuando o Build da Imagem"
     name: "gcr.io/cloud-builders/docker"
     args:
       [
         "build",
         "-t",
-        "gcr.io/$PROJECT_ID/go-hpa:$SHORT_SHA",
+        "gcr.io/$PROJECT_ID/go-hpa",
         "-f",
-        "./Dockerfile",
+        "./dockerfile",
         ".",
       ]
 
-  - id: "Push da Imagem"
+  - id: "Efetuando o Push da Imagem"
     name: "gcr.io/cloud-builders/docker"
-    args: ["push", "gcr.io/$PROJECT_ID/go-hpa:$SHORT_SHA"]
+    args: ["push", "gcr.io/$PROJECT_ID/go-hpa"]
