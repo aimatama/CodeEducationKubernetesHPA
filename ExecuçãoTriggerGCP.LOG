@@ -1,0 +1,114 @@
+starting build "e04d963f-e634-4af5-b5c8-8581555318f2"
+
+FETCHSOURCE
+Fetching storage object: gs://252261994241.cloudbuild-source.googleusercontent.com/8b972325e9bcaab95c51710f4fb5449e0da76a91-41b28bab-3dc3-43db-820d-d381290c83f6.tar.gz#1586043243192970
+Copying gs://252261994241.cloudbuild-source.googleusercontent.com/8b972325e9bcaab95c51710f4fb5449e0da76a91-41b28bab-3dc3-43db-820d-d381290c83f6.tar.gz#1586043243192970...
+/ [0 files][    0.0 B/  1.7 KiB]                                                
+/ [1 files][  1.7 KiB/  1.7 KiB]                                                
+Operation completed over 1 objects/1.7 KiB.                                      
+BUILD
+Starting Step #0 - "Instalação do App calculaRaizQuadradaGo"
+Step #0 - "Instalação do App calculaRaizQuadradaGo": Already have image (with digest): gcr.io/cloud-builders/go
+Step #0 - "Instalação do App calculaRaizQuadradaGo": Documentation at https://github.com/GoogleCloudPlatform/cloud-builders/blob/master/go/README.md
+Step #0 - "Instalação do App calculaRaizQuadradaGo": Binaries built using 'go install' will go to "./bin".
+Step #0 - "Instalação do App calculaRaizQuadradaGo": Running: go install app
+
+Finished Step #0 - "Instalação do App calculaRaizQuadradaGo"
+Starting Step #1 - "Executando o App calculaRaizQuadradaGo"
+Step #1 - "Executando o App calculaRaizQuadradaGo": Already have image (with digest): gcr.io/cloud-builders/go
+Step #1 - "Executando o App calculaRaizQuadradaGo": Documentation at https://github.com/GoogleCloudPlatform/cloud-builders/blob/master/go/README.md
+Step #1 - "Executando o App calculaRaizQuadradaGo": Running: go test -v ./...
+.
+Step #1 - "Executando o App calculaRaizQuadradaGo": === RUN   TestRaizQuadrada
+Step #1 - "Executando o App calculaRaizQuadradaGo": --- PASS: TestRaizQuadrada (0.00s)
+Step #1 - "Executando o App calculaRaizQuadradaGo": PASS
+Step #1 - "Executando o App calculaRaizQuadradaGo": ok  	app	0.003s
+Finished Step #1 - "Executando o App calculaRaizQuadradaGo"
+Starting Step #2 - "Efetuando o Building image"
+Step #2 - "Efetuando o Building image": Already have image (with digest): gcr.io/cloud-builders/docker
+Step #2 - "Efetuando o Building image": Sending build context to Docker daemon  7.477MB
+
+Step #2 - "Efetuando o Building image": Step 1/11 : FROM golang:1.8-alpine as builder
+Step #2 - "Efetuando o Building image": 1.8-alpine: Pulling from library/golang
+Step #2 - "Efetuando o Building image": 550fe1bea624: Pulling fs layer
+Step #2 - "Efetuando o Building image": cbc8da23026a: Pulling fs layer
+Step #2 - "Efetuando o Building image": 9b35aaa06d7a: Pulling fs layer
+Step #2 - "Efetuando o Building image": 46ca6ce0ffd1: Pulling fs layer
+Step #2 - "Efetuando o Building image": 7a270aebe80a: Pulling fs layer
+Step #2 - "Efetuando o Building image": 8695117c367e: Pulling fs layer
+Step #2 - "Efetuando o Building image": 46ca6ce0ffd1: Waiting
+Step #2 - "Efetuando o Building image": 7a270aebe80a: Waiting
+Step #2 - "Efetuando o Building image": 8695117c367e: Waiting
+Step #2 - "Efetuando o Building image": 9b35aaa06d7a: Verifying Checksum
+Step #2 - "Efetuando o Building image": 9b35aaa06d7a: Download complete
+Step #2 - "Efetuando o Building image": cbc8da23026a: Verifying Checksum
+Step #2 - "Efetuando o Building image": cbc8da23026a: Download complete
+Step #2 - "Efetuando o Building image": 550fe1bea624: Verifying Checksum
+Step #2 - "Efetuando o Building image": 550fe1bea624: Download complete
+Step #2 - "Efetuando o Building image": 7a270aebe80a: Verifying Checksum
+Step #2 - "Efetuando o Building image": 7a270aebe80a: Download complete
+Step #2 - "Efetuando o Building image": 8695117c367e: Verifying Checksum
+Step #2 - "Efetuando o Building image": 8695117c367e: Download complete
+Step #2 - "Efetuando o Building image": 550fe1bea624: Pull complete
+Step #2 - "Efetuando o Building image": cbc8da23026a: Pull complete
+Step #2 - "Efetuando o Building image": 46ca6ce0ffd1: Verifying Checksum
+Step #2 - "Efetuando o Building image": 46ca6ce0ffd1: Download complete
+Step #2 - "Efetuando o Building image": 9b35aaa06d7a: Pull complete
+Step #2 - "Efetuando o Building image": 46ca6ce0ffd1: Pull complete
+Step #2 - "Efetuando o Building image": 7a270aebe80a: Pull complete
+Step #2 - "Efetuando o Building image": 8695117c367e: Pull complete
+Step #2 - "Efetuando o Building image": Digest: sha256:693568f2ab0dae1e19f44b41628d2aea148fac65974cfd18f83cb9863ab1a177
+Step #2 - "Efetuando o Building image": Status: Downloaded newer image for golang:1.8-alpine
+Step #2 - "Efetuando o Building image":  ---> 4cb86d3661bf
+Step #2 - "Efetuando o Building image": Step 2/11 : RUN mkdir /src
+Step #2 - "Efetuando o Building image":  ---> Running in 50e4f667cf69
+Step #2 - "Efetuando o Building image": Removing intermediate container 50e4f667cf69
+Step #2 - "Efetuando o Building image":  ---> 8a4e54a5165e
+Step #2 - "Efetuando o Building image": Step 3/11 : RUN cd src
+Step #2 - "Efetuando o Building image":  ---> Running in 0acfc115f5fe
+Step #2 - "Efetuando o Building image": Removing intermediate container 0acfc115f5fe
+Step #2 - "Efetuando o Building image":  ---> 0d530cdf8c67
+Step #2 - "Efetuando o Building image": Step 4/11 : RUN mkdir /app
+Step #2 - "Efetuando o Building image":  ---> Running in dd0bbf1ef1a9
+Step #2 - "Efetuando o Building image": Removing intermediate container dd0bbf1ef1a9
+Step #2 - "Efetuando o Building image":  ---> abc53b2f997f
+Step #2 - "Efetuando o Building image": Step 5/11 : ADD /src/app/. /src/app/
+Step #2 - "Efetuando o Building image":  ---> 03fcaabf8874
+Step #2 - "Efetuando o Building image": Step 6/11 : WORKDIR /src/app
+Step #2 - "Efetuando o Building image":  ---> Running in d36a4fe77144
+Step #2 - "Efetuando o Building image": Removing intermediate container d36a4fe77144
+Step #2 - "Efetuando o Building image":  ---> 12a7c2338b91
+Step #2 - "Efetuando o Building image": Step 7/11 : RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -ldflags '-extldflags "-static"' -o calculaRaizQuadradaGo .
+Step #2 - "Efetuando o Building image":  ---> Running in e8f817d9934d
+Step #2 - "Efetuando o Building image": Removing intermediate container e8f817d9934d
+Step #2 - "Efetuando o Building image":  ---> e540ba2612ce
+Step #2 - "Efetuando o Building image": Step 8/11 : FROM scratch
+Step #2 - "Efetuando o Building image":  ---> 
+Step #2 - "Efetuando o Building image": Step 9/11 : COPY --from=builder /src/app/calculaRaizQuadradaGo /app/
+Step #2 - "Efetuando o Building image":  ---> 8ae57dabf6f1
+Step #2 - "Efetuando o Building image": Step 10/11 : WORKDIR /app
+Step #2 - "Efetuando o Building image":  ---> Running in 1e4dd93ac423
+Step #2 - "Efetuando o Building image": Removing intermediate container 1e4dd93ac423
+Step #2 - "Efetuando o Building image":  ---> f4ee74023678
+Step #2 - "Efetuando o Building image": Step 11/11 : CMD ["./calculaRaizQuadradaGo"]
+Step #2 - "Efetuando o Building image":  ---> Running in 71706b3661d4
+Step #2 - "Efetuando o Building image": Removing intermediate container 71706b3661d4
+Step #2 - "Efetuando o Building image":  ---> 2626f8d17139
+Step #2 - "Efetuando o Building image": [Warning] One or more build-args [version] were not consumed
+Step #2 - "Efetuando o Building image": Successfully built 2626f8d17139
+Step #2 - "Efetuando o Building image": Successfully tagged gcr.io/gothic-context-266613/go-hpa:latest
+Finished Step #2 - "Efetuando o Building image"
+Starting Step #3 - "Efetuando o Push da Imagem"
+Step #3 - "Efetuando o Push da Imagem": Already have image (with digest): gcr.io/cloud-builders/docker
+Step #3 - "Efetuando o Push da Imagem": The push refers to repository [gcr.io/gothic-context-266613/go-hpa]
+Step #3 - "Efetuando o Push da Imagem": 4f7c94deff8d: Preparing
+Step #3 - "Efetuando o Push da Imagem": 4f7c94deff8d: Pushed
+Step #3 - "Efetuando o Push da Imagem": latest: digest: sha256:642f126e61617e9d053229e3dfd9d73add4cecf11e8bb563be8cbfa52dda3150 size: 528
+Finished Step #3 - "Efetuando o Push da Imagem"
+PUSH
+Pushing gcr.io/gothic-context-266613/go-hpa:latest
+The push refers to repository [gcr.io/gothic-context-266613/go-hpa]
+4f7c94deff8d: Preparing
+4f7c94deff8d: Layer already exists
+latest: digest: sha256:642f126e61617e9d053229e3dfd9d73add4cecf11e8bb563be8cbfa52dda3150 size: 528
+DONE

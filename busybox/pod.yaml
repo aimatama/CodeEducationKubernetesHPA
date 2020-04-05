@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Pod
+metadata:
+    name: go-hpa-busybox
+spec:
+    containers:
+        - name: go-hpa-busybox
+          image: aimatama/go-hpa-busybox
+    

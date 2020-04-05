@@ -1,0 +1,27 @@
+steps:
+
+  - id: "Instalação do App calculaRaizQuadradaGo"
+    name: 'gcr.io/cloud-builders/go'
+    args: ['install', 'app']
+    env: ['GOPATH=.']
+    
+  - id: 'Executando o App calculaRaizQuadradaGo'
+    name: 'gcr.io/cloud-builders/go'
+    args: ['test', '-v','./...']
+    env: ['GOPATH=.']
+
+  - id: "Build da Imagem"
+    name: "gcr.io/cloud-builders/docker"
+    args:
+      [
+        "build",
+        "-t",
+        "gcr.io/$PROJECT_ID/go-hpa:$SHORT_SHA",
+        "-f",
+        "./Dockerfile",
+        ".",
+      ]
+
+  - id: "Push da Imagem"
+    name: "gcr.io/cloud-builders/docker"
+    args: ["push", "gcr.io/$PROJECT_ID/go-hpa:$SHORT_SHA"]
